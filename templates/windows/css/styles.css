@@ -1,0 +1,16 @@
+:root {
+    --main-color:#f94d5a;
+    --main-color-ligh: #f96772;
+    --section-bg: #f2f2f2;
+    --section-footer: #333333;
+    --section-bg-white: #ffffff;
+    --section-text: #000000;
+}
+
+
+.bg-footer {
+    background: var(--section-footer);
+    color: var(--section-bg-white);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
