@@ -1,10 +1,10 @@
 :root {
-    --main-color:#f94d5a;
-    --main-color-ligh: #f96772;
-    --section-bg: #f2f2f2;
+    --section-bg: #f7f8f9;
     --section-footer: #333333;
     --section-bg-white: #ffffff;
     --section-text: #000000;
+    --global-font: 'Fira Sans', sans-serif;
+    --global-buttons: #d91f36;
 }
 
 
@@ -13,4 +13,46 @@
     color: var(--section-bg-white);
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+.bottom_menu {
+    padding-right: 1rem;
+}
+
+body {
+
+    font-family: var(--global-font);
+    /*font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    font-size: 18px;
+    line-height: 26px;
+    color: #282B30;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga", "kern";
+
+}
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, h6, .h6 {
+
+    font-family: var(--global-font) !important;
+
+}
+
+.bg_section {
+    background: var(--section-bg);
+}
+
+/*.img {*/
+/*    padding-top: 0.3rem;*/
+/*}*/
+
+.btn-primary {
+    background-color: var(--global-buttons) !important;
+    border-color: var(--global-buttons) !important;
+}
+
+.bg-dark-top {
+    background-color: var(--global-buttons) !important;
 }

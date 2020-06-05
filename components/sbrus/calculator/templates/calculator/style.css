@@ -1,0 +1,55 @@
+.type_win, .mode_win {
+    margin-top: 30px;
+}
+
+.jb {
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+}
+
+.flex {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.type_n {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.type_n.active .wrap_type {
+    background: #E2E1E4;
+}
+
+.wrap_type {
+    padding: 11px 5px;
+    background: #f7f8f9;
+    margin-bottom: 5px;
+}
+
+.type_n {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.type_p {
+    width: 150px;
+    /*text-align: center;*/
+    cursor: pointer;
+}
+
+.type_p.active {
+    background: #E2E1E4;
+}
+
+.text_p {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
