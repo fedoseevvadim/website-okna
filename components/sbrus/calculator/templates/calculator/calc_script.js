@@ -11,6 +11,16 @@ function deselectShape () {
     });
 }
 
+function hideOm () {
+
+    let om       = document.getElementsByName("om");
+
+    om.forEach((element) => {
+        element.setAttribute("hidden", true);
+    });
+
+}
+
 function selectType ( id ) {
 
     let types    = document.getElementsByName("type");
@@ -61,13 +71,21 @@ function selectMode ( id ) {
         }
     });
 
-    deselectShape();
+    if ( shapeSel ) {
+        selectShape ( parseInt(shapeSel) );
+    } else {
+        deselectShape();
+    }
+
+
 }
 
 function selectShape ( id ) {
 
     let shape       = document.getElementsByName("shape");
     let priceElem   = document.getElementById('price');
+
+    hideOm();
 
     shape.forEach((element) => {
 
@@ -83,11 +101,13 @@ function selectShape ( id ) {
             for ( i = 0; i < price.length; i++) {
 
                 let ids = modeSel.split("_");
+                let omImg = document.getElementById('om_' + parseInt(ids[1]));
 
                 if ( parseInt(price[i].type) ===  parseInt(ids[0]) ) {
 
                     if ( parseInt(price[i].om) === parseInt(ids[1]) ) {
                         priceElem.innerHTML = "Цена: " + price[i].price;
+                        omImg.removeAttribute("hidden");
                     }
                 }
             }

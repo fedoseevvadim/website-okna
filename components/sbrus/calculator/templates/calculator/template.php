@@ -4,13 +4,14 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-6">
+
+        <div class="col-md-6  text-center">
+
             <div class="row">
                 <h3>1. Выберите тип окна</h3>
             </div>
 
             <div class="row">
-
 
                 <?php
 
@@ -115,11 +116,30 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-md-6  text-left" style="padding: 1rem;">
+
+			<?
+			foreach ( $arResult["OPENING_MODE"] as $item ) {
+				$arrFile    = CFile::GetFileArray($item["FIELDS"]["DETAIL_PICTURE"]);
+
+				if ( $item["FIELDS"]["DETAIL_PICTURE"] ) {
+
+					?>
+                    <img name="om" src="<?=$arrFile["SRC"]?>" hidden id="om_<?=$item["FIELDS"]["ID"]?>">
+					<?
+				}
+
+			}
+			?>
+
+
+
             <h3><div id="price"></div></h3>
         </div>
 
     </div>
+
+
 
 </div>
 

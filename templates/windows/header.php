@@ -22,52 +22,142 @@
 
 </head>
 
-<body>
+<div>
 
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 
-<header>
+    <header class="site-header py-1 height1 d-none d-sm-none d-md-block">
 
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">О нас</h4>
-                    <p class="text-muted">
-                        <?
-                        $APPLICATION->IncludeFile("/include/about.php", Array(), Array(
-                            "MODE"      => "html",                                           // будет редактировать в веб-редакторе
-                            "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
-                        ));
-                        ?>
+        <div class="navbar navbar-dark box-shadow">
 
-                        </p>
+            <div class="container d-flex justify-content-between">
+                <a href="/"><img src="/local/templates/windows/images/logo.png" width="180px;"></a>
+
+                <div>
+
+                       <span style="color: #ffffff;"> Москва и область </span>
                 </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Контактная информация</h4>
-                    <ul class="text-muted">
-                        <?
-                        $APPLICATION->IncludeFile("/include/phone.php", Array(), Array(
-                            "MODE"      => "html",                                           // будет редактировать в веб-редакторе
-                            "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
-                        ));
-                        ?>
-                    </ul>
+
+                <div>
+                    <span class="header-text">
+
+                         <?
+                         $APPLICATION->IncludeFile("/include/phone_top.php", Array(), Array(
+                             "MODE"      => "html",                                           // будет редактировать в веб-редакторе
+                             "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
+                         ));
+                         ?>
+
+                    </span>
                 </div>
+
+                <div>
+                    <span>
+
+                         <?
+                         $APPLICATION->IncludeFile("/include/email.php", Array(), Array(
+                             "MODE"      => "html",                                           // будет редактировать в веб-редакторе
+                             "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
+                         ));
+                         ?>
+
+                    </span>
+                </div>
+
+
+                <div class="">
+<a class="btn btn-sm btn-primary" href="/personal/orders/" role="button">Личный кабинет</a>
+                </div>
+
             </div>
-        </div>
-    </div>
 
-    <div class="navbar navbar-dark bg-dark-top box-shadow">
-        <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                <strong>Окна</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
-    </div>
 
-</header>
+    </header>
+
+</div>
+
+
+    <header class="site-header bg-dark-top sticky-top py-1 d-none d-sm-none d-md-block">
+
+        <div class="navbar navbar-dark box-shadow sticky-top">
+
+            <div class="container d-flex justify-content-between">
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "top_menu",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "1",
+                        "MENU_CACHE_GET_VARS" => array(""),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "top",
+                        "USE_EXT" => "N"
+                    )
+                );?>
+
+            </div>
+
+
+
+        </div>
+
+    </header>
+
+
+<div class="d-xl-none d-block d-sm-none">
+    <nav class="navbar navbar-expand-md header-bg bg-dark-top fixed-top header>
+
+        <a href="/"><img src="/local/templates/windows/images/logo2.png" width="100px;"></a>
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars menu" style="color:var(--section-bg-white); font-size:28px;" aria-hidden="true"></i>
+                    </span>
+
+        </button>
+
+        <div class="ml-auto navbar-collapse collapse nav-content order-3 order-md-3" id="navbarCollapse">
+
+
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:menu",
+				"top_menu",
+				Array(
+					"ALLOW_MULTI_SELECT" => "N",
+					"CHILD_MENU_TYPE" => "left",
+					"DELAY" => "N",
+					"MAX_LEVEL" => "1",
+					"MENU_CACHE_GET_VARS" => array(""),
+					"MENU_CACHE_TIME" => "3600",
+					"MENU_CACHE_TYPE" => "N",
+					"MENU_CACHE_USE_GROUPS" => "Y",
+					"ROOT_MENU_TYPE" => "top",
+					"USE_EXT" => "N"
+				)
+			);?>
+
+        </div>
+
+    </nav>
+</div>
+<?
+
+if ( $APPLICATION->GetCurPage() !== "/" ) {
+
+?>
+
+<div class="container" style="padding-top:2rem;">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1><?=$APPLICATION->ShowTitle()?></h1>
+<?
+}

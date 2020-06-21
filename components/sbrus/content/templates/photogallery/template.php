@@ -1,4 +1,3 @@
-
 <!-- Core CSS file -->
 <link rel="stylesheet" href="/local/lib/PhotoSwipe/dist/photoswipe.css">
 
@@ -14,17 +13,21 @@
 <!-- UI JS file -->
 <script src="/local/lib/PhotoSwipe/dist/photoswipe-ui-default.min.js"></script>
 
-<div class="container">
+<?
+shuffle($arResult['ITEMS']); // перемешаем
+?>
 
-    <div class="row">
+
+
+    <div class="row text-center">
 
         <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                 <?
                 foreach ( $arResult['ITEMS'] as $item ) {
                     ?>
 
-                    <a href="<?=$item["DETAIL_PICTURE"]['SRC']?>"  data-size="1600x1600" data-med="<?=$item["DETAIL_PICTURE"]['SRC']?>" data-med-size="1024x1024" class="demo-gallery__img--main">
-                        <img src="<?=$item["PREVIEW_PICTURE"]['SRC']?>" width="240px" height="240px" style="padding-top: 0.3rem;">
+                    <a href="<?=$item["DETAIL_PICTURE"]['SRC']?>"  data-size="1600x1200" data-med="<?=$item["DETAIL_PICTURE"]['SRC']?>" data-med-size="1024x1024" class="demo-gallery__img--main">
+                        <img src="<?=$item["PREVIEW_PICTURE"]['SRC']?>" style="padding: 0.5rem;" width="400px;">
                         <figure><?=$item["NAME"]?></figure>
                     </a>
 
@@ -37,7 +40,7 @@
 
     </div>
 
-</div>
+
 
 
 <div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

@@ -20,4 +20,13 @@ if ( $arrPost ) {
 
     $result = $iblock->Add( $arrElem );
 
+    $arrFields = [
+        "NAME" => $arrPost['NAME'],
+        "EMAIL" => $arrPost['EMAIL'],
+        "PHONE" => $arrPost['PHONE'],
+        "TEXT" => $arrPost['TEXT'],
+    ];
+
+    \CEvent::Send("FEEDBACK_FORM_", "s1", $arrFields);
+
 }

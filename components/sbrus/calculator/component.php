@@ -67,6 +67,7 @@ $arSelect = [
     "NAME",
     "ACTIVE_FROM",
     "PREVIEW_PICTURE",
+	"DETAIL_PICTURE",
     "PROPERTY_*"
 ];
 

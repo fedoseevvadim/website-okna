@@ -3,7 +3,7 @@
     --section-footer: #333333;
     --section-bg-white: #ffffff;
     --section-text: #000000;
-    --global-font: 'Fira Sans', sans-serif;
+    --global-font: Tahoma, Helvetica, Arial, sans-serif;
     --global-buttons: #d91f36;
 }
 
@@ -32,6 +32,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga", "kern";
 
+	height: 100%;
+
 }
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, h6, .h6 {
@@ -39,20 +41,49 @@ body {
     font-family: var(--global-font) !important;
 
 }
-
 .bg_section {
     background: var(--section-bg);
 }
+
 
 /*.img {*/
 /*    padding-top: 0.3rem;*/
 /*}*/
 
 .btn-primary {
+
     background-color: var(--global-buttons) !important;
     border-color: var(--global-buttons) !important;
+
 }
 
 .bg-dark-top {
     background-color: var(--global-buttons) !important;
+}
+
+.social {
+    padding: 0.3rem;
+}
+
+footer .line {
+    height: 1px;
+    background: rgba(255,255,255,.08);
+}
+
+.height1 {
+    height: 90px;
+    background-color: rgb(66,66,66);
+}
+
+.header-text {
+    color: grey;
+    font-weight: bold;
+}
+
+.form-control {
+    font-size: 1.3rem !important;
+}
+
+.link {
+    color: var(--global-buttons);
 }

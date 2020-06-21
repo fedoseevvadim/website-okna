@@ -1,10 +1,42 @@
+<?
+if ( $APPLICATION->GetCurPage() !== "/" OR $APPLICATION->GetCurPage() !== "/index.php") {
+
+	?>
+    </div>
+    </div>
+    </div>
+	<?
+}
+?>
+
+<div style="padding-top: 3rem;"></div>
+
+<div class="bg_section" >
+    <div class="container "  style="padding: 3rem;">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <H2>Отправить заявку на продукцию</H2>
+            </div>
+        </div>
+
+    </div>
+
+    <?$APPLICATION->IncludeComponent(
+        "sbrus:content",
+        "feedbackform"
+    );?>
+
+</div>
+
 <footer class="bg-footer">
 
     <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4">
+            <!-- Show only on small -->
+            <div class="col-md-4 text-center d-block d-sm-none  ">
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "bottom_menu",
@@ -20,7 +52,32 @@
                     false
                 );?>
 
-                <div style="padding-top:1rem;">
+                <hr class="line">
+            </div>
+
+
+        <div class="col-md-4 d-none d-sm-none d-md-block ">
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "bottom_menu",
+                array(
+                    "ROOT_MENU_TYPE" => "bottom",
+                    "MAX_LEVEL" => "1",
+                    "MENU_CACHE_TYPE" => "A",
+                    "CACHE_SELECTED_ITEMS" => "N",
+                    "MENU_CACHE_TIME" => "36000000",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "MENU_CACHE_GET_VARS" => array(),
+                ),
+                false
+            );?>
+
+
+
+        </div>
+
+            <div class="col-md-4 text-center">
+                <div>
                     <?
                     $APPLICATION->IncludeFile("/include/socnet_footer.php", Array(), Array(
                         "MODE"      => "html",                                           // будет редактировать в веб-редакторе
@@ -31,24 +88,21 @@
 
             </div>
 
-            <div class="col-md-4 text-center">
-                    <?
-                    $APPLICATION->IncludeFile("/include/phone.php", Array(), Array(
-                        "MODE"      => "html",                                           // будет редактировать в веб-редакторе
-                        "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
-                    ));
-                    ?>
+            <div class="col-md-4 text-right">
+                <?
+                $APPLICATION->IncludeFile("/include/phone.php", Array(), Array(
+                    "MODE"      => "html",                                           // будет редактировать в веб-редакторе
+                    "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
+                ));
+                ?>
                 <br>
-                <i class="far fa-envelope"> email@email.ru</i><br>
-                <i class="far fa-map"> Адрес</i>
 
             </div>
 
-            <div class="col-md-4 text-center">
-                <i class="fas fa-user-secret text-muted"> Политика конфиденциальности</i>
-            </div>
 
         </div>
+
+        <hr class="line">
 
         <div class="row">
 

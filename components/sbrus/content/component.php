@@ -474,14 +474,14 @@ if(isset($arResult["ID"]))
     }
 
     $this->setTemplateCachedData($arResult["NAV_CACHED_DATA"]);
-
-    if($arParams["SET_TITLE"])
-    {
-        if ($arResult["IPROPERTY_VALUES"] && $arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != "")
-            $APPLICATION->SetTitle($arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"], $arTitleOptions);
-        elseif(isset($arResult["NAME"]))
-            $APPLICATION->SetTitle($arResult["NAME"], $arTitleOptions);
-    }
+//
+//    if($arParams["SET_TITLE"])
+//    {
+//        if ($arResult["IPROPERTY_VALUES"] && $arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != "")
+//            $APPLICATION->SetTitle($arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"], $arTitleOptions);
+//        elseif(isset($arResult["NAME"]))
+//            $APPLICATION->SetTitle($arResult["NAME"], $arTitleOptions);
+//    }
 
     if ($arResult["IPROPERTY_VALUES"])
     {
