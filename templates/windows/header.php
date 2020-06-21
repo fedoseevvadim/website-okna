@@ -31,7 +31,7 @@
         <div class="navbar navbar-dark box-shadow">
 
             <div class="container d-flex justify-content-between">
-                <a href="/"><img src="/local/templates/windows/images/logo.png" width="180px;"></a>
+                <a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/images/logo.png" width="180px;"></a>
 
                 <div>
 
@@ -111,9 +111,11 @@
 
 
 <div class="d-xl-none d-block d-sm-none">
-    <nav class="navbar navbar-expand-md header-bg bg-dark-top fixed-top header>
+    <nav class="navbar navbar-expand-md header-bg bg-dark-top fixed-top header">
 
-        <a href="/"><img src="/local/templates/windows/images/logo2.png" width="100px;"></a>
+        <a href="/">
+                <img src="<?=SITE_TEMPLATE_PATH?>/images/logo.png" width="100px;">
+        </a>
 
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 

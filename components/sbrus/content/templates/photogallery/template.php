@@ -19,7 +19,7 @@ shuffle($arResult['ITEMS']); // перемешаем
 
 
 
-    <div class="row text-center">
+
 
         <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                 <?
@@ -27,7 +27,7 @@ shuffle($arResult['ITEMS']); // перемешаем
                     ?>
 
                     <a href="<?=$item["DETAIL_PICTURE"]['SRC']?>"  data-size="1600x1200" data-med="<?=$item["DETAIL_PICTURE"]['SRC']?>" data-med-size="1024x1024" class="demo-gallery__img--main">
-                        <img src="<?=$item["PREVIEW_PICTURE"]['SRC']?>" style="padding: 0.5rem;" width="400px;">
+                        <img src="<?=$item["PREVIEW_PICTURE"]['SRC']?>" style="padding: 0.5rem;" width="100%;">
                         <figure><?=$item["NAME"]?></figure>
                     </a>
 
@@ -38,7 +38,7 @@ shuffle($arResult['ITEMS']); // перемешаем
 
         </div>
 
-    </div>
+
 
 
 

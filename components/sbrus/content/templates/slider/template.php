@@ -36,7 +36,7 @@
                     <div class="container">
                         <div class="carousel-caption <?=$item['PROPERTIES']['TEXT_ALIGN']['VALUE']?>">
                             <h1><?=$item['PROPERTIES']['TITLE']['VALUE']?></h1>
-                            <p><?=$item['PROPERTIES']['SUB_TITLE']['VALUE']?></p>
+                            <p class="d-none d-sm-none d-md-block"><?=$item['PROPERTIES']['SUB_TITLE']['VALUE']?></p>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button"><?=$item['PROPERTIES']['BUTTON']['VALUE']?></a></p>
                         </div>
                     </div>
