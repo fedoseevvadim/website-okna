@@ -53,6 +53,7 @@
 
             <div class="row">
                 <?php
+                $i = 1;
 
                 foreach ( $arResult["OPENING_MODE"] as $item ) {
 
@@ -65,6 +66,10 @@
                         $active     = "";
                     }
 
+                    if ( $i === 1 ) {
+                        $active = "active";
+                    }
+
                     ?>
 
                     <div name="opening_mode" style=" padding:1rem; display: <?=$display?>;"  class="type_n mode<?=$id?> <?=$active?>" onclick="selectMode(<?=$id?>)" id="<?=$item["PROPERTIES"]["TYPE_OF_WINDOW"]["VALUE"]?>_<?=$id?>">
@@ -75,6 +80,7 @@
 
                     <?
                     //$arResult["OPENING_MODE"] = "";
+                    $i++;
                 }
 
                 ?>
@@ -88,28 +94,35 @@
             <div class="row">
 
                 <?php
+                $i = 1;
 
                 foreach ( $arResult["SHAPE"] as $item ) {
 
-                $id = $item["FIELDS"]["ID"];
-                $arrFile = CFile::GetFileArray($item["FIELDS"]["PREVIEW_PICTURE"]);
+                    $id = $item["FIELDS"]["ID"];
+                    $arrFile = CFile::GetFileArray($item["FIELDS"]["PREVIEW_PICTURE"]);
 
-                ?>
-                <div name="shape" onclick="selectShape(<?=$id?>)" style="padding:1rem; width='100px'" id="<?=$id?>" class="type_p" >
+                    $active = "";
+                    if ( $i === 1 ) {
+                        $active = "active";
+                    }
 
-                        <img src="<?=$arrFile["SRC"]?>">
-                        <div class="params_win_line text_p">
-                            <span class="bold">Профиль:</span> <?=$item["PROPERTIES"]["SHAPE"]["VALUE"]?>
-                        </div>
-                        <div class="params_win_line text_p">
-                            <span class="bold">Фурнитура:</span> <?=$item["PROPERTIES"]["FINDINGS"]["VALUE"]?>
-                        </div>
-                        <div class="params_win_line text_p">
-                            <span class="bold">Остекление:</span> 2<?=$item["PROPERTIES"]["GLAZING"]["VALUE"]?>
-                        </div>
+                    ?>
+                    <div name="shape" onclick="selectShape(<?=$id?>)" style="padding:1rem; width='100px'" id="<?=$id?>" class="type_p <?=$active?>" >
 
-                </div>
-            <?
+                            <img src="<?=$arrFile["SRC"]?>">
+                            <div class="params_win_line text_p">
+                                <span class="bold">Профиль:</span> <?=$item["PROPERTIES"]["SHAPE"]["VALUE"]?>
+                            </div>
+                            <div class="params_win_line text_p">
+                                <span class="bold">Фурнитура:</span> <?=$item["PROPERTIES"]["FINDINGS"]["VALUE"]?>
+                            </div>
+                            <div class="params_win_line text_p">
+                                <span class="bold">Остекление:</span> 2<?=$item["PROPERTIES"]["GLAZING"]["VALUE"]?>
+                            </div>
+
+                    </div>
+                    <?
+                    $i++;
             }
             ?>
 
@@ -119,16 +132,25 @@
         <div class="col-md-6  text-left" style="padding: 1rem;">
 
 			<?
+            $i = 1;
+
 			foreach ( $arResult["OPENING_MODE"] as $item ) {
 				$arrFile    = CFile::GetFileArray($item["FIELDS"]["DETAIL_PICTURE"]);
+
+                $hidden = "hidden";
+
+                if ( $i === 1 ) {
+                    $hidden = "";
+                }
 
 				if ( $item["FIELDS"]["DETAIL_PICTURE"] ) {
 
 					?>
-                    <img name="om" src="<?=$arrFile["SRC"]?>" hidden id="om_<?=$item["FIELDS"]["ID"]?>">
+                    <img name="om" src="<?=$arrFile["SRC"]?>" <?=$hidden?> id="om_<?=$item["FIELDS"]["ID"]?>">
 					<?
 				}
 
+                $i++;
 			}
 			?>
 
